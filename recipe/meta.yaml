@@ -25,6 +25,7 @@ requirements:
     - msgpack-python
     - msgpack-numpy
     - python-confluent-kafka
+    - suitcase-mongo
 
 test:
   imports:
