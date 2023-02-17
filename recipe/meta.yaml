@@ -1,6 +1,5 @@
-{% set version = "0.9.1" %}
+{% set version = "0.10.0" %}
 {% set name = "bluesky-kafka" %}
-{% set sha256 = "eb2daa6f5c9fc090b565ca69f3d70e4d4c73ad3afa83fdcac49cb1ca42f706a6" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 5aab55d4d47261327d0ab6c7f76d2b079f93f625917ee118dd9e638b94f1929f
 
 build:
   noarch: python
@@ -40,6 +39,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - mrakitin
-    - kbeeperez
     - conda-forge/event-model
+    - jklynch
+    - mrakitin
