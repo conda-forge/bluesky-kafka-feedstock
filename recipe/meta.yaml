@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 5aab55d4d47261327d0ab6c7f76d2b079f93f625917ee118dd9e638b94f1929f
 
 build:
@@ -16,10 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - bluesky-base
     - msgpack-python
     - msgpack-numpy
@@ -27,6 +28,8 @@ requirements:
     - suitcase-mongo
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - bluesky_kafka
 
